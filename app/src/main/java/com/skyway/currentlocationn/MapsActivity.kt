@@ -132,7 +132,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     }
                     LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE -> Log.e(
                         "GPS",
-                        "Location settings are inadequate, and cannot be fixed here. Fix in Settings."
+                        "Location settings are inadequate, and cannot be fixed here. Fix in Settings.hfj"
                     )
                 }
             }
