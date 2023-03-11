@@ -131,7 +131,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                         Log.e("GPS", "Unable to execute request.")
                     }
                     LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE -> Log.e(
-                        "GPS this is",
+                        "GPS this isgkldfhgldagkdkg",
                         "Location settings are inadequate, and cannot be fixed here. Fix in Settings.hfj"
                     )
                 }
