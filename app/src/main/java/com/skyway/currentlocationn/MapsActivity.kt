@@ -1,7 +1,10 @@
 package com.skyway.currentlocationn
 
+import android.content.Context
 import android.content.IntentSender.SendIntentException
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.location.Location
 import android.os.Bundle
 import android.util.Log
@@ -93,11 +96,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         // Add a marker in Sydney and move the camera
         val latLng = LatLng(currentlocation.latitude, currentlocation.longitude)
         mMap.addMarker(MarkerOptions().position(latLng).title("Marker in Sydney")
-            .icon(BitmapDescriptorFactory.fromResource(R.drawable.markerimg)))
+            .icon(BitmapDescriptorFactory.fromBitmap(generateSmallIcon(applicationContext))))
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16f))
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16f))
 
+    }
+    fun generateSmallIcon(context: Context): Bitmap {
+        val height = 150
+        val width = 100
+        val bitmap = BitmapFactory.decodeResource(context.resources, R.drawable.markerimg)
+        return Bitmap.createScaledBitmap(bitmap, width, height, false)
     }
 
     private fun getGPSpermission() {
